@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projet 1 : Outil de reporting</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Roboto Condensed', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #121212;
+      color: white;
+      text-transform: uppercase;
+      overflow-x: hidden;
+    }
+
+    .hero {
+      position: relative;
+      height: 50vh;
+      width: 100%;
+      background: url('background.png') center/cover no-repeat;
+      filter: blur(5px);
+      z-index: -1;
+    }
+
+    .header-container {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      z-index: 10;
+      padding-top: 20px;
+    }
+
+    .logo-container {
+      margin-bottom: 20px;
+    }
+
+    .logo {
+      height: 200px;
+      width: auto;
+      filter: drop-shadow(0 0 10px white);
+    }
+
+    .top-banner {
+      display: flex;
+      justify-content: center;
+      background: rgba(0, 0, 0, 0.9);
+      padding: 20px 40px;
+      border-radius: 10px;
+      width: 90%;
+      max-width: 900px;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 60px;
+      margin: 0;
+      padding: 0;
+      justify-content: center;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      padding: 14px 24px;
+      border-radius: 6px;
+      font-size: 1.1rem;
+      transition: background 0.3s;
+    }
+
+    nav ul li a:hover,
+    nav ul li a.active {
+      background-color: white;
+      color: black;
+    }
+
+    .project-content {
+      max-width: 800px;
+      margin: 60px auto 40px;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .project-content h1 {
+      font-size: 2.5em;
+      margin-bottom: 30px;
+      text-transform: none;
+    }
+
+    .project-content h2 {
+      font-size: 1.5em;
+      margin-top: 40px;
+      margin-bottom: 15px;
+      color: #f2f2f2;
+      text-transform: none;
+      text-align: left;
+    }
+
+    .project-content img {
+      width: 100%;
+      max-height: 400px;
+      object-fit: cover;
+      border-radius: 15px;
+      margin-bottom: 30px;
+    }
+
+    .project-content p {
+      font-size: 1.2em;
+      line-height: 1.6em;
+      text-transform: none;
+      text-align: justify;
+    }
+
+    @media screen and (max-width: 768px) {
+      .top-banner {
+        flex-direction: column;
+        padding: 15px;
+      }
+
+      nav ul {
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      .logo {
+        height: 150px;
+      }
+
+      .project-content {
+        padding: 15px;
+      }
+    }
+
+    @media screen and (max-width: 480px) {
+      .logo {
+        height: 120px;
+      }
+
+      nav ul li a {
+        padding: 10px 18px;
+        font-size: 1em;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="hero"></div>
+
+  <div class="header-container">
+    <div class="logo-container">
+      <a href="accueil.html"><img src="logo.png" alt="Logo" class="logo"></a>
+    </div>
+    <div class="top-banner">
+      <nav>
+        <ul>
+          <li><a href="apdm.html">À propos de moi</a></li>
+          <li><a href="Projet.html" class="active">Projets</a></li>
+          <li><a href="bilan.html">Bilan</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+
+  <section class="project-content">
+    <h1>SAÉ - Création d’un outil de reporting</h1>
+    
+    <h2>Contexte du projet</h2>
+    <p>
+      Dans le cadre de cette SAÉ de première année, nous avions pour mission de concevoir un outil Excel de gestion personnalisée des notes pour l’ensemble des semestres du BUT Science des Données. L’objectif était de développer un classeur fonctionnel, dynamique et évolutif, permettant à chaque étudiant de suivre précisément ses résultats par compétence, par ressource, par SAÉ et par semestre
+    </p>
+
+    <h2>Objectif de l’application</h2>
+    <p>
+      L’application devait non seulement enregistrer et gérer les notes obtenues, mais aussi générer automatiquement un tableau de bord clair et interactif, intégrant des visualisations graphiques, des filtres et des calculs statistiques. De plus, elle devait permettre de simuler les décisions de jury de fin d’année comme le passage en deuxième année ou la validation des compétences
+    </p>
+
+    <h2>Principales fonctionnalités</h2>
+    <p>
+      Le classeur Excel permettait d’ajouter et de modifier des notes à l’aide de menus déroulants dynamiques, d’alimenter automatiquement une base de données interne recensant tous les devoirs, d’afficher un tableau de bord par semestre et par compétence avec des graphiques générés automatiquement, de calculer la décision de jury en appliquant les règles du BUT SD comme les moyennes par compétence ou la validation du niveau 1 et de faciliter la compréhension avec un guide d’utilisation intégré
+    </p>
+
+    <h2>Outils et méthodes utilisés</h2>
+    <p>
+      Le projet s’appuyait principalement sur les fonctions Excel avancées comme les formules conditionnelles, les tableaux croisés dynamiques et les mises en forme dynamiques. Le VBA n’était utilisé qu’en dernier recours pour automatiser certains traitements spécifiques comme les interactions avec les menus ou la génération automatique des résultats
+    </p>
+
+    <h2>Bilan personnel</h2>
+    <p>
+      Ce projet m’a permis de mieux maîtriser les fonctions avancées d’Excel, mais aussi de comprendre l’importance de l’ergonomie et de la visualisation dans un outil de reporting. J’ai appris à structurer mes données proprement, à créer des tableaux de bord utiles et lisibles, et à concevoir des fonctionnalités qui répondent à de vrais besoins d’utilisateurs
+    </p>
+  </section>
+
+</body>
+</html>

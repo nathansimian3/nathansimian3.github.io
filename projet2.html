@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projet 2 : Traitement de fichiers JSON</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      font-family: 'Roboto Condensed', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #121212;
+      color: white;
+      text-transform: uppercase;
+      overflow-x: hidden;
+    }
+
+    .hero {
+      position: relative;
+      height: 50vh;
+      width: 100%;
+      background: url('background.png') center/cover no-repeat;
+      filter: blur(5px);
+      z-index: -1;
+    }
+
+    .header-container {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      z-index: 10;
+      padding-top: 20px;
+    }
+
+    .logo-container {
+      margin-bottom: 20px;
+    }
+
+    .logo {
+      height: 200px;
+      width: auto;
+      filter: drop-shadow(0 0 10px white);
+    }
+
+    .top-banner {
+      display: flex;
+      justify-content: center;
+      background: rgba(0, 0, 0, 0.9);
+      padding: 20px 40px;
+      border-radius: 10px;
+      width: 90%;
+      max-width: 900px;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 60px;
+      margin: 0;
+      padding: 0;
+      justify-content: center;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      padding: 14px 24px;
+      border-radius: 6px;
+      font-size: 1.1rem;
+      transition: background 0.3s;
+    }
+
+    nav ul li a:hover,
+    nav ul li a.active {
+      background-color: white;
+      color: black;
+    }
+
+    .project-content {
+      max-width: 800px;
+      margin: 60px auto 40px;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .project-content h1 {
+      font-size: 2.5em;
+      margin-bottom: 30px;
+    }
+
+    .project-content h2 {
+      font-size: 1.5em;
+      margin-top: 40px;
+      margin-bottom: 15px;
+      color: #ffffff;
+    }
+
+    .project-content img {
+      width: 100%;
+      max-height: 400px;
+      object-fit: cover;
+      border-radius: 15px;
+      margin-bottom: 30px;
+    }
+
+    .project-content p {
+      font-size: 1.2em;
+      line-height: 1.6em;
+      text-transform: none;
+      text-align: justify;
+    }
+
+    @media screen and (max-width: 768px) {
+      .top-banner {
+        flex-direction: column;
+        padding: 15px;
+      }
+
+      nav ul {
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      .logo {
+        height: 150px;
+      }
+
+      .project-content {
+        padding: 15px;
+      }
+    }
+
+    @media screen and (max-width: 480px) {
+      .logo {
+        height: 120px;
+      }
+
+      nav ul li a {
+        padding: 10px 18px;
+        font-size: 1em;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="hero"></div>
+
+  <div class="header-container">
+    <div class="logo-container">
+      <a href="accueil.html"><img src="logo.png" alt="Logo" class="logo"></a>
+    </div>
+    <div class="top-banner">
+      <nav>
+        <ul>
+          <li><a href="apdm.html">À propos de moi</a></li>
+          <li><a href="Projet.html" class="active">Projets</a></li>
+          <li><a href="bilan.html">Bilan</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+
+  <section class="project-content">
+    <h1>Saé : Gestion de fichiers Python</h1>
+    <img src="images/projet2.png" alt="Image Projet 2">
+
+    <h2>Présentation du projet</h2>
+    <p>
+      Création d’un script Python permettant de transformer un fichier JSON complexe issu de l’agenda culturel de Paris en un fichier CSV proprement structuré et lisible
+    </p>
+
+    <h2>Contexte</h2>
+    <p>
+      Dans le cadre de cette SAÉ de première année nous devions créer un script Python capable de transformer un fichier JSON issu de l’agenda participatif de la Ville de Paris en un fichier CSV propre et exploitable le fichier de départ contenait des données complexes souvent imbriquées sur des événements culturels et nécessitait un nettoyage rigoureux
+    </p>
+
+    <h2>Objectifs</h2>
+    <p>
+      L’objectif était de produire un fichier CSV structuré en extrayant les bonnes informations du JSON source en respectant un format précis pour les dates les heures les descriptions et les colonnes attendues le tout devant être compatible avec Excel grâce à un encodage et un séparateur adaptés
+    </p>
+
+    <h2>Fonctionnalités</h2>
+    <p>
+      Le script devait permettre d’extraire les dates et heures de début et de fin en les formatant à la française de parcourir les structures imbriquées du fichier JSON pour en retirer les bonnes informations de nettoyer les champs texte notamment les descriptions parfois riches en balises HTML et d’écrire un fichier CSV final avec les colonnes imposées dans l’ordre correct et un séparateur ; en encodage UTF-8
+    </p>
+
+    <h2>Outils et méthodes</h2>
+    <p>
+      Le travail a été réalisé avec Python en utilisant uniquement la bibliothèque standard sans modules externes une attention particulière a été portée à l’organisation du code aux commentaires à l’indentation et à la lisibilité générale du script afin de respecter les bonnes pratiques de développement et de produire un travail propre et structuré
+    </p>
+
+    <h2>Bilan personnel</h2>
+    <p>
+      Ce projet m’a permis d’approfondir mes compétences en traitement de données en Python et en manipulation de fichiers JSON et CSV j’ai appris à structurer un script robuste à respecter un cahier des charges détaillé et à produire un résultat exploitable par des utilisateurs extérieurs tout en adoptant une logique de rigueur et de clarté dans la programmation
+    </p>
+  </section>
+
+</body>
+</html>

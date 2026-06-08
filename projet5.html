@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projet 5 : Coopérative de sel</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      font-family: 'Roboto Condensed', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #121212;
+      color: white;
+      text-transform: uppercase;
+      overflow-x: hidden;
+    }
+
+    .hero {
+      position: relative;
+      height: 50vh;
+      width: 100%;
+      background: url('background.png') center/cover no-repeat;
+      filter: blur(5px);
+      z-index: -1;
+    }
+
+    .header-container {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      z-index: 10;
+      padding-top: 20px;
+    }
+
+    .logo-container {
+      margin-bottom: 20px;
+    }
+
+    .logo {
+      height: 200px;
+      width: auto;
+      filter: drop-shadow(0 0 10px white);
+    }
+
+    .top-banner {
+      display: flex;
+      justify-content: center;
+      background: rgba(0, 0, 0, 0.9);
+      padding: 20px 40px;
+      border-radius: 10px;
+      width: 90%;
+      max-width: 900px;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 60px;
+      margin: 0;
+      padding: 0;
+      justify-content: center;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      padding: 14px 24px;
+      border-radius: 6px;
+      font-size: 1.1rem;
+      transition: background 0.3s;
+    }
+
+    nav ul li a:hover,
+    nav ul li a.active {
+      background-color: white;
+      color: black;
+    }
+
+    .project-content {
+      max-width: 800px;
+      margin: 60px auto 40px;
+      text-align: left;
+      padding: 20px;
+    }
+
+    .project-content h1 {
+      font-size: 2.5em;
+      margin-bottom: 30px;
+      text-align: center;
+    }
+
+    .project-content h2 {
+      font-size: 1.5em;
+      margin-top: 30px;
+      margin-bottom: 15px;
+    }
+
+    .project-content p {
+      font-size: 1.2em;
+      line-height: 1.6em;
+      text-transform: none;
+      text-align: justify;
+    }
+
+    .project-content img {
+      width: 100%;
+      max-height: 400px;
+      object-fit: cover;
+      border-radius: 15px;
+      margin-bottom: 30px;
+    }
+
+    @media screen and (max-width: 768px) {
+      .top-banner {
+        flex-direction: column;
+        padding: 15px;
+      }
+
+      nav ul {
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      .logo {
+        height: 150px;
+      }
+
+      .project-content {
+        padding: 15px;
+      }
+    }
+
+    @media screen and (max-width: 480px) {
+      .logo {
+        height: 120px;
+      }
+
+      nav ul li a {
+        padding: 10px 18px;
+        font-size: 1em;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="hero"></div>
+
+  <div class="header-container">
+    <div class="logo-container">
+      <a href="accueil.html"><img src="logo.png" alt="Logo" class="logo"></a>
+    </div>
+    <div class="top-banner">
+      <nav>
+        <ul>
+          <li><a href="apdm.html">À propos de moi</a></li>
+          <li><a href="Projet.html" class="active">Projets</a></li>
+          <li><a href="bilan.html">Bilan</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+
+  <section class="project-content">
+    <h1>SAÉ : Conception et implémentation d’une base de données </h1>
+   
+    <h2>CONTEXTE DU PROJET</h2>
+    <p>
+      Dans le cadre de cette SAÉ de première année, nous avons répondu au besoin d’une coopérative de l’île de Ré souhaitant gérer efficacement les livraisons, ventes et stocks de sel récolté par les sauniers locaux. La coopérative centralise chaque été la production de gros sel et de fleur de sel. Le but était de concevoir une solution complète, de la modélisation de la base jusqu’à l’exploitation via une interface graphique
+    </p>
+
+    <h2>OBJECTIF DE LA MISSION</h2>
+    <p>
+      Notre mission était de concevoir une base de données fiable et fonctionnelle. Elle devait permettre à la coopérative de suivre les livraisons par saunier, les quantités en stock, les ventes par produit, et les clients associés. La base devait également permettre l’ajout automatisé de nouvelles données chaque année et répondre à des requêtes de gestion utiles à la structure
+    </p>
+
+    <h2>DÉMARCHE MÉTHODOLOGIQUE</h2>
+    <p>
+      Nous avons commencé par élaborer un MCD sous Looping, puis un schéma relationnel respectant les bonnes pratiques de modélisation. Le script SQL correspondant a été rédigé à la main, avec toutes les contraintes d’intégrité. Une fois les tables créées dans MySQL, nous avons injecté des données réelles à l’aide de fichiers CSV. Pour cela, un script Python a été développé pour automatiser le traitement et l’import des données de l’année 2023
+    </p>
+    <p>
+      Nous avons ensuite construit dix requêtes SQL exploitables par la coopérative : calculs de stocks, quantités livrées, ventes totales, clients actifs, valeurs par produit, et plus encore. Certaines requêtes comportaient des jointures complexes, des regroupements, des conditions HAVING ainsi qu’une vue réutilisable
+    </p>
+
+    <h2>INTERFACE UTILISATEUR</h2>
+    <p>
+      Nous avons créé une interface graphique en Python avec Tkinter permettant de piloter l’ensemble du système. L’utilisateur peut y consulter les données principales, insérer de nouveaux fichiers Excel, exécuter les requêtes prédéfinies, et visualiser les informations utiles de façon claire. Le tout est accessible depuis un menu simple et intuitif
+    </p>
+
+    <h2>BILAN PERSONNEL</h2>
+    <p>
+      Ce projet m’a permis d’appliquer concrètement la théorie des bases de données à un cas réel. J’ai développé mes compétences en modélisation relationnelle, en requêtage SQL, en gestion de flux de données et en développement d’interface graphique. Il m’a aussi appris l’importance de l’automatisation et de la rigueur dans la conception d’un outil destiné à un vrai utilisateur
+    </p>
+  </section>
+
+</body>
+</html>

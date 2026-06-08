@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Projets - Bibou</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap" rel="stylesheet"/>
+  <style>
+    body {
+      font-family: 'Roboto Condensed', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #121212;
+      color: white;
+      text-transform: uppercase;
+      overflow-x: hidden;
+    }
+
+    .hero {
+      position: relative;
+      height: 50vh;
+      width: 100%;
+      background: url('background.png') center/cover no-repeat;
+      filter: blur(5px);
+      z-index: -1;
+    }
+
+    .header-container {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      z-index: 10;
+      padding-top: 20px;
+    }
+
+    .logo-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+
+    .logo {
+      height: 200px;
+      width: auto;
+      filter: drop-shadow(0 0 10px white);
+    }
+
+    /* Style du menu principal */
+    .top-banner {
+      display: flex;
+      justify-content: center;
+      background: rgba(0, 0, 0, 0.9);
+      padding: 20px 40px;
+      border-radius: 10px;
+      width: 90%;
+      max-width: 900px;
+    }
+
+    /* Style du sous-menu (identique au principal mais un peu plus petit) */
+    .sub-banner {
+      display: flex;
+      justify-content: center;
+      background: rgba(0, 0, 0, 0.9);
+      padding: 15px 40px;
+      border-radius: 10px;
+      width: 90%;
+      max-width: 600px;
+      margin-top: 15px; /* Espace entre le menu principal et le sous-menu */
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 60px;
+      margin: 0;
+      padding: 0;
+      justify-content: center;
+    }
+
+    /* Réduire un peu l'espace entre les boutons du sous-menu */
+    .sub-banner nav ul {
+      gap: 30px;
+    }
+
+    /* Le style s'applique aux deux menus (principal et sous-menu) */
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      padding: 14px 24px;
+      border-radius: 6px;
+      font-size: 1.1rem;
+      text-align: center;
+      display: inline-block;
+      transition: background 0.3s, color 0.3s;
+    }
+
+    nav ul li a:hover,
+    nav ul li a.active {
+      background-color: white;
+      color: black;
+    }
+
+    .projects {
+      margin-top: 80px;
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .project-card {
+      background: #121212;
+      color: white;
+      text-decoration: none;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(255,255,255,0.1);
+      transition: transform 0.3s, box-shadow 0.3s;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .project-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 16px rgba(255,255,255,0.2);
+    }
+
+    .project-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .card-content {
+      padding: 20px;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .card-content h3 {
+      margin: 0 0 10px;
+      font-size: 1.2em;
+    }
+
+    .card-content p {
+      font-size: 0.95em;
+      margin: 0 0 20px;
+    }
+
+    .read-more {
+      margin-top: auto;
+      font-weight: bold;
+      color: white;
+      font-size: 1em;
+      padding: 5px 10px;
+      border: 2px solid white;
+      border-radius: 8px;
+      background-color: transparent;
+      transition: all 0.3s ease;
+      display: inline-block;
+    }
+
+    .read-more:hover {
+      background-color: white;
+      color: black;
+      transform: scale(1.1);
+    }
+
+    /* Responsive */
+    @media screen and (max-width: 768px) {
+      .top-banner, .sub-banner {
+        flex-direction: column;
+        padding: 15px;
+      }
+
+      nav ul, .sub-banner nav ul {
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      .logo {
+        height: 150px;
+      }
+    }
+
+    @media screen and (max-width: 480px) {
+      .logo {
+        height: 120px;
+      }
+
+      .read-more {
+        font-size: 0.9em;
+        padding: 4px 8px;
+      }
+
+      .card-content h3 {
+        font-size: 1em;
+      }
+
+      .card-content p {
+        font-size: 0.85em;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="header-container">
+    <div class="logo-container">
+      <a href="accueil.html"><img src="logo.png" alt="Logo" class="logo"></a>
+    </div>
+    
+    <header class="top-banner">
+      <nav>
+        <ul>
+          <li><a href="apdm.html">À propos de moi</a></li>
+          <li><a href="Projet.html" class="active">Projets</a></li>
+          <li><a href="bilan.html">Bilan</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <div class="sub-banner">
+      <nav>
+        <ul>
+          <li><a href="but1.html" class="active">BUT 1</a></li>
+          <li><a href="but2.html">BUT 2</a></li>
+          <li><a href="but3.html">BUT 3</a></li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+
+  <section class="hero"></section>
+
+  <section class="projects">
+    <div class="projects-grid">
+      <a href="projet1.html" class="project-card">
+        <img src="projet1.png" alt="Projet 1">
+        <div class="card-content">
+          <h3>SAÉ - Création d’un reporting</h3>
+          <p>Création d’un outil Excel interactif pour suivre ses notes, simuler les décisions de jury et visualiser ses résultats à travers un tableau de bord dynamique.</p>
+          <span class="read-more">Lire la suite</span>
+        </div>
+      </a>
+      <a href="projet2.html" class="project-card">
+        <img src="projet2.png" alt="Projet 2">
+        <div class="card-content">
+          <h3>SAÉ - Gestion de fichiers PYTHON</h3>
+          <p>Création d’un script Python permettant de transformer un fichier JSON complexe issu de l’agenda culturel de Paris en un fichier CSV proprement structuré et lisible.</p>
+          <span class="read-more">Lire la suite</span>
+        </div>
+      </a>
+      <a href="projet5.html" class="project-card">
+        <img src="projet5.png" alt="Projet 5">
+        <div class="card-content">
+          <h3>SAÉ - Conception et implémentation d’une base de données</h3>
+          <p>Création d’une base de données complète et d’une interface interactive pour gérer les stocks et ventes de sel d’une coopérative.</p>
+          <span class="read-more">Lire la suite</span>
+        </div>
+      </a>
+      <a href="projet6.html" class="project-card">
+        <img src="projet6.png" alt="Projet 6">
+        <div class="card-content">
+          <h3>SAÉ - Estimation et échantillonnage</h3>
+          <p>Estimation de la population d’une région française à partir de méthodes d’échantillonnage aléatoire simple et stratifié sous R.</p>
+          <span class="read-more">Lire la suite</span>
+        </div>
+      </a>
+      <a href="projet7.html" class="project-card">
+        <img src="projet7.png" alt="Projet 7">
+        <div class="card-content">
+          <h3>SAÉ - Régression sur des données réelles</h3>
+          <p>Création d’un modèle de régression en R pour prédire le prix de vente de logements dans les Deux-Sèvres à partir de données réelles de 2023-2024.</p>
+          <span class="read-more">Lire la suite</span>
+        </div>
+      </a>
+      <a href="projet8.html" class="project-card">
+        <img src="projet8.png" alt="Projet 8">
+        <div class="card-content">
+          <h3>CONCOURS DATAVIZ</h3>
+          <p>Création d’une infographie synthétique et visuelle sur les inégalités de scolarisation chez les 15–29 ans selon leur lieu de vie, à partir de données INSEE enrichies et visualisées avec Canva.</p>
+          <span class="read-more">Lire la suite</span>
+        </div>
+      </a>
+      <a href="projet9.html" class="project-card">
+        <img src="projet9.png" alt="Projet 9">
+        <div class="card-content">
+          <h3>SAÉ - Analyse de données, reporting et datavisualisation</h3>
+          <p>Création d'un tableau de bord interactif pour analyser les accidents de la vie courante (AcVC) à partir de données MAVIE, avec visualisations, comparaisons à la population française et recommandations de prévention.</p>
+          <span class="read-more">Lire la suite</span>
+        </div>
+      </a>
+    </div>
+  </section>
+</body>
+</html>
