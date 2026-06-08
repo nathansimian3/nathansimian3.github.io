@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projet 7 : Régression immobilière</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      font-family: 'Roboto Condensed', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #121212;
+      color: white;
+      text-transform: uppercase;
+      overflow-x: hidden;
+    }
+
+    .hero {
+      position: relative;
+      height: 50vh;
+      width: 100%;
+      background: url('background.png') center/cover no-repeat;
+      filter: blur(5px);
+      z-index: -1;
+    }
+
+    .header-container {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      z-index: 10;
+      padding-top: 20px;
+    }
+
+    .logo-container {
+      margin-bottom: 20px;
+    }
+
+    .logo {
+      height: 200px;
+      width: auto;
+      filter: drop-shadow(0 0 10px white);
+    }
+
+    .top-banner {
+      display: flex;
+      justify-content: center;
+      background: rgba(0, 0, 0, 0.9);
+      padding: 20px 40px;
+      border-radius: 10px;
+      width: 90%;
+      max-width: 900px;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 60px;
+      margin: 0;
+      padding: 0;
+      justify-content: center;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      padding: 14px 24px;
+      border-radius: 6px;
+      font-size: 1.1rem;
+      transition: background 0.3s;
+    }
+
+    nav ul li a:hover,
+    nav ul li a.active {
+      background-color: white;
+      color: black;
+    }
+
+    .project-content {
+      max-width: 900px;
+      margin: 60px auto 40px;
+      text-align: left;
+      padding: 20px;
+    }
+
+    .project-content h1 {
+      font-size: 2.5em;
+      margin-bottom: 30px;
+      text-align: center;
+    }
+
+    .project-content h2 {
+      font-size: 1.5em;
+      margin-top: 30px;
+      margin-bottom: 15px;
+    }
+
+    .project-content p {
+      font-size: 1.2em;
+      line-height: 1.6em;
+      text-transform: none;
+      text-align: justify;
+    }
+
+    @media screen and (max-width: 768px) {
+      .top-banner {
+        flex-direction: column;
+        padding: 15px;
+      }
+
+      nav ul {
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      .logo {
+        height: 150px;
+      }
+
+      .project-content {
+        padding: 15px;
+      }
+    }
+
+    @media screen and (max-width: 480px) {
+      .logo {
+        height: 120px;
+      }
+
+      nav ul li a {
+        padding: 10px 18px;
+        font-size: 1em;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="hero"></div>
+
+  <div class="header-container">
+    <div class="logo-container">
+      <a href="accueil.html"><img src="logo.png" alt="Logo" class="logo"></a>
+    </div>
+    <div class="top-banner">
+      <nav>
+        <ul>
+          <li><a href="apdm.html">À propos de moi</a></li>
+          <li><a href="Projet.html" class="active">Projets</a></li>
+          <li><a href="bilan.html">Bilan</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+
+  <section class="project-content">
+    <h1>SAE : Régression sur données immobilières</h1>
+
+    <h2>CONTEXTE DU PROJET</h2>
+    <p>
+      Dans le cadre de la SAÉ “Régression sur données réelles”, nous avons travaillé en binôme sur un jeu de données issu des ventes immobilières de 2023 et du premier semestre 2024 dans les Deux-Sèvres. Le projet consistait à concevoir un modèle de régression à partir d’un fichier d’apprentissage contenant le prix de vente et les caractéristiques des biens (surface, nombre de pièces, terrain, type, etc.), puis à prédire les prix des logements dans un fichier test.
+    </p>
+
+    <h2>OBJECTIF DE LA MISSION</h2>
+    <p>
+      L’objectif principal était de produire des prédictions les plus précises possibles en construisant un modèle statistique adapté. Nous devions respecter plusieurs contraintes : utiliser exclusivement le langage R, ne pas recourir aux fonctions <code>lm()</code> ni <code>predict()</code>, et n’utiliser aucune librairie externe. Les résultats devaient être restitués dans un fichier CSV contenant les identifiants des biens et leur prix prédit.
+    </p>
+
+    <h2>DÉMARCHE MÉTHODOLOGIQUE</h2>
+    <p>
+      Nous avons d’abord mené une analyse exploratoire complète de la variable cible (valeur foncière), en observant sa distribution globale et en la croisant avec les différentes variables explicatives. Nous avons ensuite pris la décision de séparer les biens immobiliers selon leur type : maisons et appartements, car les dynamiques de prix sont très différentes d’un type à l’autre.
+    </p>
+    <p>
+      Pour chaque catégorie, nous avons testé plusieurs transformations, notamment des régressions sur les logarithmes des surfaces et des prix, afin de stabiliser les variances. Après de nombreux essais, nous avons retenu un modèle de régression multiple transformé (log-log) prenant en compte la surface habitable, la surface du terrain (pour les maisons), et le nombre de pièces. Les coefficients ont été calculés manuellement par la formule des moindres carrés généralisés.
+    </p>
+
+    <h2>RÉSULTATS ET PRÉDICTIONS</h2>
+    <p>
+      Les prédictions finales ont été exportées dans un fichier CSV contenant les identifiants du fichier test et les prix estimés. Le modèle a permis d’obtenir des résultats relativement précis au vu des contraintes imposées, avec un bon classement basé sur la somme des carrés des résidus.
+    </p>
+
+    <h2>BILAN PERSONNEL</h2>
+    <p>
+      Ce projet m’a permis de mettre en pratique une approche rigoureuse de la modélisation, tout en respectant des contraintes techniques fortes. J’ai pu consolider mes compétences en R, en statistiques, et en nettoyage de données, tout en développant une méthode reproductible sans dépendances externes. 
+  </section>
+
+</body>
+</html>
+
+

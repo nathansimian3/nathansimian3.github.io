@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projet 9 : ACVC</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      font-family: 'Roboto Condensed', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #121212;
+      color: white;
+      text-transform: uppercase;
+      overflow-x: hidden;
+    }
+
+    .hero {
+      position: relative;
+      height: 50vh;
+      width: 100%;
+      background: url('background.png') center/cover no-repeat;
+      filter: blur(5px);
+      z-index: -1;
+    }
+
+    .header-container {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      z-index: 10;
+      padding-top: 20px;
+    }
+
+    .logo-container {
+      margin-bottom: 20px;
+    }
+
+    .logo {
+      height: 200px;
+      width: auto;
+      filter: drop-shadow(0 0 10px white);
+    }
+
+    .top-banner {
+      display: flex;
+      justify-content: center;
+      background: rgba(0, 0, 0, 0.9);
+      padding: 20px 40px;
+      border-radius: 10px;
+      width: 90%;
+      max-width: 900px;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 60px;
+      margin: 0;
+      padding: 0;
+      justify-content: center;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      padding: 14px 24px;
+      border-radius: 6px;
+      font-size: 1.1rem;
+      transition: background 0.3s;
+    }
+
+    nav ul li a:hover,
+    nav ul li a.active {
+      background-color: white;
+      color: black;
+    }
+
+    .project-content {
+      max-width: 800px;
+      margin: 60px auto 40px;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .project-content h1 {
+      font-size: 2.5em;
+      margin-bottom: 30px;
+    }
+
+    .project-content img {
+      width: 100%;
+      max-height: 400px;
+      object-fit: cover;
+      border-radius: 15px;
+      margin-bottom: 30px;
+    }
+
+    .project-content p {
+      font-size: 1.2em;
+      line-height: 1.6em;
+      text-transform: none;
+      text-align: justify;
+    }
+
+    .project-content h2 {
+      margin-top: 40px;
+      margin-bottom: 15px;
+      font-size: 1.5em;
+    }
+
+    @media screen and (max-width: 768px) {
+      .top-banner {
+        flex-direction: column;
+        padding: 15px;
+      }
+
+      nav ul {
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      .logo {
+        height: 150px;
+      }
+
+      .project-content {
+        padding: 15px;
+      }
+    }
+
+    @media screen and (max-width: 480px) {
+      .logo {
+        height: 120px;
+      }
+
+      nav ul li a {
+        padding: 10px 18px;
+        font-size: 1em;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="hero"></div>
+
+  <div class="header-container">
+    <div class="logo-container">
+      <a href="accueil.html"><img src="logo.png" alt="Logo" class="logo"></a>
+    </div>
+    <div class="top-banner">
+      <nav>
+        <ul>
+          <li><a href="apdm.html">À propos de moi</a></li>
+          <li><a href="Projet.html" class="active">Projets</a></li>
+          <li><a href="bilan.html">Bilan</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+
+  <section class="project-content">
+    <h1>SAÉ : Analyse de données, Reporting et Datavisualisation</h1>
+ 
+    
+    <h2>CONTEXTE DU PROJET</h2>
+    <p>
+      Dans le cadre de la SAÉ "Analyse de données, Reporting et Datavisualisation" du BUT Science des Données, j’ai participé à un projet collaboratif dont l’objectif était de concevoir un outil interactif permettant d’analyser les accidents de la vie courante (AcVC) en France. Ce projet, mené en partenariat avec l’organisme Calyxis, s’appuyait sur la base MAVIE, une enquête nationale référençant les caractéristiques des victimes, leur environnement ainsi que les circonstances des accidents domestiques.
+    </p>
+
+    <h2>OBJECTIFS DE LA MISSION</h2>
+    <p>
+      L’objectif principal était de mieux comprendre les profils des individus victimes d’accidents, de les comparer à ceux de la population française à partir de données externes fiables, et d’identifier les facteurs favorisant ou limitant leur survenue et leur gravité. L’analyse devait aboutir à des recommandations concrètes en matière de prévention.
+    </p>
+
+    <h2>TECHNOLOGIES UTILISÉES</h2>
+    <p>
+      Pour répondre à ces enjeux, nous avons utilisé plusieurs outils complémentaires. Nous avons développé une interface graphique avec Python et Tkinter, conçue pour être simple d’utilisation et intuitive. En parallèle, nous avons créé des tableaux de bord web dynamiques grâce au langage R et au framework Shiny. Power BI nous a également permis de produire des visualisations percutantes à différentes étapes du projet. Enfin, pour la présentation en anglais, nous avons utilisé l’outil Canva afin de créer un diaporama clair et professionnel.
+    </p>
+
+    <h2>MÉTHODOLOGIE DE TRAVAIL (SCRUM)</h2>
+    <p>
+      Tout au long du projet, nous avons adopté une organisation agile en suivant la méthodologie SCRUM. Le travail a été divisé en sprints, avec des mêlées régulières pour faire le point sur l’avancement. Un tableau Kanban a été mis en place afin de visualiser les tâches "à faire", "en cours" et "terminées". Cette approche nous a permis de structurer efficacement nos efforts, de bien répartir les rôles au sein du groupe et de réagir rapidement face aux imprévus.
+    </p>
+
+    <h2>DÉVELOPPEMENT DE L’OUTIL</h2>
+    <p>
+      L’outil conçu est capable de charger automatiquement les fichiers de données, de les nettoyer (gestion des valeurs manquantes, recodage des modalités, correction d’erreurs), puis de générer des visualisations lisibles et pertinentes. Il permet d’explorer les profils des volontaires, les caractéristiques des accidents (lieu, activité, gravité...), et les facteurs influençant le risque. L’interface intègre des filtres interactifs et des graphiques adaptés à différents types de données, rendant l’expérience accessible même pour des utilisateurs non spécialistes.
+    </p>
+
+    <h2>RESTITUTION FINALE</h2>
+    <p>
+      La restitution du projet a comporté plusieurs livrables. Nous avons réalisé une présentation orale en anglais devant un jury, durant laquelle nous avons exposé notre démarche, nos outils, et nos résultats. En complément, nous avons rédigé un rapport synthétique, un tutoriel détaillant l’utilisation de l’application, ainsi que des comptes-rendus individuels et un bilan collectif.
+    </p>
+
+    <h2>BILAN PERSONNEL</h2>
+    <p>
+      Ce projet a été une expérience particulièrement formatrice. Il m’a permis de progresser techniquement, notamment en programmation, en visualisation de données et en automatisation de traitements. J’ai également appris à mieux collaborer en équipe et à gérer un projet de bout en bout selon une logique professionnelle. Enfin, il m’a permis de mesurer l’impact concret que peuvent avoir les sciences des données dans un contexte réel de santé publique et de prévention.
+    </p>
+  </section>
+
+</body>
+</html>

@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projet 8 : Concours Dataviz</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      font-family: 'Roboto Condensed', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #121212;
+      color: white;
+      text-transform: uppercase;
+      overflow-x: hidden;
+    }
+
+    .hero {
+      position: relative;
+      height: 50vh;
+      width: 100%;
+      background: url('background.png') center/cover no-repeat;
+      filter: blur(5px);
+      z-index: -1;
+    }
+
+    .header-container {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      z-index: 10;
+      padding-top: 20px;
+    }
+
+    .logo-container {
+      margin-bottom: 20px;
+    }
+
+    .logo {
+      height: 200px;
+      width: auto;
+      filter: drop-shadow(0 0 10px white);
+    }
+
+    .top-banner {
+      display: flex;
+      justify-content: center;
+      background: rgba(0, 0, 0, 0.9);
+      padding: 20px 40px;
+      border-radius: 10px;
+      width: 90%;
+      max-width: 900px;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 60px;
+      margin: 0;
+      padding: 0;
+      justify-content: center;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      padding: 14px 24px;
+      border-radius: 6px;
+      font-size: 1.1rem;
+      transition: background 0.3s;
+    }
+
+    nav ul li a:hover,
+    nav ul li a.active {
+      background-color: white;
+      color: black;
+    }
+
+    .project-content {
+      max-width: 1200px;
+      margin: 60px auto 40px;
+      padding: 20px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 40px;
+      justify-content: center;
+      align-items: flex-start;
+      text-align: left;
+    }
+
+    .project-content h1 {
+      font-size: 2.5em;
+      margin-bottom: 30px;
+      width: 100%;
+      text-align: center;
+    }
+
+    .project-content h2 {
+      font-size: 1.5em;
+      margin-top: 30px;
+      margin-bottom: 15px;
+    }
+
+    .project-content p {
+      font-size: 1.2em;
+      line-height: 1.6em;
+      text-transform: none;
+      text-align: justify;
+    }
+
+    .text-block {
+      flex: 1 1 400px;
+    }
+
+    .image-block {
+      flex: 1 1 400px;
+      text-align: center;
+    }
+
+    .image-block img {
+      width: 100%;
+      border-radius: 15px;
+      margin-bottom: 20px;
+    }
+
+    .download-btn {
+      display: inline-block;
+      background-color: white;
+      color: black;
+      text-decoration: none;
+      padding: 12px 24px;
+      font-weight: bold;
+      border-radius: 8px;
+      transition: background 0.3s;
+      text-transform: uppercase;
+    }
+
+    .download-btn:hover {
+      background-color: #cccccc;
+    }
+
+    @media screen and (max-width: 768px) {
+      .top-banner {
+        flex-direction: column;
+        padding: 15px;
+      }
+
+      nav ul {
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      .logo {
+        height: 150px;
+      }
+
+      .project-content {
+        flex-direction: column;
+        padding: 15px;
+      }
+
+      .project-content h1 {
+        font-size: 2em;
+      }
+    }
+
+    @media screen and (max-width: 480px) {
+      .logo {
+        height: 120px;
+      }
+
+      nav ul li a {
+        padding: 10px 18px;
+        font-size: 1em;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="hero"></div>
+
+  <div class="header-container">
+    <div class="logo-container">
+      <a href="accueil.html"><img src="logo.png" alt="Logo" class="logo"></a>
+    </div>
+    <div class="top-banner">
+      <nav>
+        <ul>
+          <li><a href="apdm.html">À propos de moi</a></li>
+          <li><a href="Projet.html" class="active">Projets</a></li>
+          <li><a href="bilan.html">Bilan</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+
+  <section class="project-content">
+    <div class="text-block">
+      <h1>CONCOURS DATAVIZ – CLASH DES GÉNÉRATIONS</h1>
+
+      <h2>CONTEXTE DU PROJET</h2>
+      <p>
+        Dans le cadre d’un concours de datavisualisation, notre groupe de cinq étudiants a conçu une infographie comparative sur la scolarisation et l’emploi des jeunes de 15 à 29 ans, en comparant les générations 2010 et 2021. Le jeu de données fourni par l’INSEE a permis d’observer les évolutions de diplôme, de travail, de chômage, et de répartition géographique chez les jeunes français.
+      </p>
+
+      <h2>OBJECTIF ET ANGLE CHOISI</h2>
+      <p>
+        Nous avons choisi d’adopter une approche comparative et intergénérationnelle : “Clash des générations : laquelle s’en sort le mieux ?”. Cette problématique nous a permis de mettre en lumière les changements sociaux et éducatifs entre deux générations, en nous concentrant sur des indicateurs clés comme le niveau de diplôme, l’accès à l’emploi ou encore les écarts homme/femme.
+      </p>
+
+      <h2>STRUCTURE DE L’INFOGRAPHIE</h2>
+      <p>
+        L’infographie présente de manière synthétique les évolutions entre 2010 et 2021 à travers 5 axes : les différences de diplôme, la baisse de l’emploi des jeunes, les écarts de genre dans les hauts diplômes, la stagnation du chômage, et enfin la géographie des départements les plus diplômés.
+      </p>
+
+      <h2>OUTILS UTILISÉS</h2>
+      <p>
+        Les graphiques ont été produits avec R (ggplot2) et les données enrichies par des sources officielles de l’INSEE. L’infographie a ensuite été réalisée avec Canva, afin de garantir une mise en page lisible, professionnelle et percutante.
+      </p>
+
+      <h2>BILAN PERSONNEL</h2>
+      <p>
+        Ce projet de groupe m’a permis de mieux comprendre l’intérêt de la datavisualisation dans une perspective de communication. Il m’a appris à traduire des données complexes en messages visuels simples, tout en posant une problématique sociétale actuelle. J’ai aussi pu renforcer mes compétences graphiques, ma rigueur analytique, et ma capacité à travailler en équipe sur un livrable unique.
+      </p>
+    </div>
+
+    <div class="image-block">
+      <img src="dataviz.png" alt="Infographie Projet 8">
+      <a class="download-btn" href="dataviz.png" download>Télécharger l'infographie (PNG)</a>
+    </div>
+  </section>
+
+</body>
+</html>
