@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>À propos de moi</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Roboto Condensed', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #121212;
+      color: white;
+      text-transform: uppercase;
+      overflow-x: hidden;
+    }
+
+    .hero {
+      position: relative;
+      height: 50vh;
+      width: 100%;
+      background: url('background.png') center/cover no-repeat;
+      filter: blur(5px);
+      z-index: -1;
+    }
+
+    .header-container {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      z-index: 10;
+      padding-top: 20px;
+    }
+
+    .logo-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+
+    .logo {
+      height: 200px;
+      width: auto;
+      filter: drop-shadow(0 0 10px white);
+    }
+
+    .top-banner {
+      display: flex;
+      justify-content: center;
+      background: rgba(0, 0, 0, 0.9);
+      padding: 20px 40px;
+      border-radius: 10px;
+      width: 90%;
+      max-width: 900px;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 60px;
+      margin: 0;
+      padding: 0;
+      justify-content: center;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      padding: 14px 24px;
+      border-radius: 6px;
+      font-size: 1.1rem;
+      text-align: center;
+      display: inline-block;
+      transition: background 0.3s;
+    }
+
+    nav ul li a:hover,
+    nav ul li a.active {
+      background-color: white;
+      color: black;
+    }
+
+    .section {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      padding: 60px 40px;
+      gap: 40px;
+      max-width: 1200px;
+      margin: 60px auto 0;
+    }
+
+    .text-column {
+      flex: 1 1 500px;
+    }
+
+    .image-column {
+      flex: 1 1 400px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .image-column img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 10px;
+    }
+
+    h2 {
+      font-size: 2em;
+      margin-bottom: 20px;
+    }
+
+    p {
+      font-size: 1em;
+      line-height: 1.6em;
+      margin-bottom: 20px;
+      text-transform: none;
+    }
+
+    /* Responsive */
+    @media screen and (max-width: 768px) {
+      .top-banner {
+        flex-direction: column;
+        padding: 15px;
+      }
+
+      nav ul {
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      .logo {
+        height: 150px;
+      }
+
+      .section {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .text-column, .image-column {
+        flex: 1 1 100%;
+      }
+    }
+
+    @media screen and (max-width: 480px) {
+      .logo {
+        height: 120px;
+      }
+
+      h2 {
+        font-size: 1.5em;
+      }
+
+      p {
+        font-size: 0.95em;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="hero"></div>
+
+  <div class="header-container">
+    <div class="logo-container">
+      <a href="accueil.html"><img src="logo.png" alt="Logo NS Sports" class="logo"></a>
+    </div>
+    <div class="top-banner">
+      <nav>
+        <ul>
+          <li><a href="apdm.html" class="active">À propos de moi</a></li>
+          <li><a href="Projet.html">Projets</a></li>
+          <li><a href="bilan.html">Bilan</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+
+  <!-- Présentation -->
+  <section class="section">
+    <div class="text-column">
+      <h2>Présentation</h2>
+      <p>Je m'appelle Nathan Simian, j’ai 18 ans et je suis originaire d’Orléans. Actuellement étudiant en première année de BUT Science des Données à Niort, je découvre un univers passionnant à l’intersection des mathématiques, de l’informatique et de l’analyse de données.</p>
+      <p>J’ai obtenu un baccalauréat général, avec les spécialités Mathématiques et Physique-Chimie. Ces disciplines m’ont appris à être rigoureux, logique, mais aussi à analyser les problèmes de manière structurée. Je suis quelqu’un de curieux, dynamique, toujours à l’écoute des autres. J’aime travailler en groupe, relever des défis, et je m’adapte facilement à mon environnement. J’accorde aussi beaucoup d’importance à la bonne humeur, au respect et au partage, que ce soit dans mes études ou dans la vie quotidienne.</p>
+    </div>
+    <div class="image-column">
+      <img src="apdv1.png" alt="Présentation de Nathan, Orléans, Niort et BUT SD">
+    </div>
+  </section>
+
+  <!-- Basket -->
+  <section class="section">
+    <div class="image-column">
+      <img src="apdv2.png" alt="Nathan Simian - Basket et OLB">
+    </div>
+    <div class="text-column">
+      <h2>Un passionné de sport</h2>
+      <p>Le sport, une source de motivation et de dépassement. Le sport fait partie de ma vie depuis toujours, et c’est particulièrement le basketball qui me passionne. Je suis un fervent supporter de l’Orléans Loiret Basket, mais aussi des Lakers et des Mavericks en NBA.</p>
+      <p>Ce que j’aime dans ce sport, c’est autant le jeu que les valeurs : l’esprit d’équipe, le respect, la stratégie, la rigueur et le dépassement de soi.</p>
+    </div>
+  </section>
+
+  <!-- Montagne -->
+  <section class="section">
+    <div class="text-column">
+      <h2>Sport et randonnée</h2>
+      <p>Grâce à mes grands-parents, j’ai grandi en passant beaucoup de temps en montagne, notamment dans la région Auvergne-Rhône-Alpes. Ces séjours m’ont donné le goût de la nature, de l’effort physique et du calme des grands espaces.</p>
+      <p>C’est d’ailleurs ce qui m’a motivé à me fixer un objectif sportif ambitieux : réaliser le GR20, l’un des plus célèbres et des plus difficiles treks d’Europe, qui traverse la Corse. Pour moi, ce projet représente à la fois un défi personnel et un retour aux sources.</p>
+    </div>
+    <div class="image-column">
+      <img src="apdv3.png" alt="Nathan en montagne avec carte GR20">
+    </div>
+  </section>
+
+  <!-- Voyages -->
+  <section class="section">
+    <div class="image-column">
+      <img src="apdv4.png" alt="7 merveilles du monde, safari, rêve de voyage">
+    </div>
+    <div class="text-column">
+      <h2>L’ouverture sur le monde</h2>
+      <p>Même si je n’ai pas encore eu l’occasion de beaucoup voyager, ma première grande expérience – un séjour en Corse – m’a donné le goût de l’aventure. J’ai été marqué par les paysages, la culture locale, et le sentiment de liberté que procure le voyage.</p>
+      <p>Un de mes rêves serait de visiter les 7 merveilles du monde. Pour moi, voyager, c’est découvrir d’autres façons de vivre, s’enrichir au contact des cultures et élargir sa vision du monde.</p>
+    </div>
+  </section>
+
+  <!-- Projet Pro -->
+  <section class="section">
+    <div class="text-column">
+      <h2>Mon projet professionnel</h2>
+      <p>Ce qui me fait vibrer, c’est la donnée, mais surtout lorsqu’elle croise ma passion de toujours : le sport. Mon objectif professionnel est clair : travailler dans le domaine de la data appliquée au sport, que ce soit pour analyser la performance, conseiller les équipes, ou développer des outils d’aide à la décision.</p>
+      <p>Je ne cherche pas la lumière des projecteurs, mais plutôt à travailler dans l’ombre, aux côtés des plus grands noms du sport, en les aidant à progresser grâce à la puissance des données.</p>
+    </div>
+    <div class="image-column">
+      <img src="apdv5.png" alt="Écrans d'analyse de données sportives">
+    </div>
+  </section>
+
+</body>
+</html>
