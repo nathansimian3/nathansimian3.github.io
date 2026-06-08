@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Projets BUT 2 - Bibou</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap" rel="stylesheet"/>
+  <style>
+    body {
+      font-family: 'Roboto Condensed', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #121212;
+      color: white;
+      text-transform: uppercase;
+      overflow-x: hidden;
+    }
+
+    .hero {
+      position: relative;
+      height: 50vh;
+      width: 100%;
+      background: url('background.png') center/cover no-repeat;
+      filter: blur(5px);
+      z-index: -1;
+    }
+
+    .header-container {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      z-index: 10;
+      padding-top: 20px;
+    }
+
+    .logo-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+
+    .logo {
+      height: 200px;
+      width: auto;
+      filter: drop-shadow(0 0 10px white);
+    }
+
+    /* Style du menu principal */
+    .top-banner {
+      display: flex;
+      justify-content: center;
+      background: rgba(0, 0, 0, 0.9);
+      padding: 20px 40px;
+      border-radius: 10px;
+      width: 90%;
+      max-width: 900px;
+    }
+
+    /* Style du sous-menu (identique au principal mais un peu plus petit) */
+    .sub-banner {
+      display: flex;
+      justify-content: center;
+      background: rgba(0, 0, 0, 0.9);
+      padding: 15px 40px;
+      border-radius: 10px;
+      width: 90%;
+      max-width: 600px;
+      margin-top: 15px; /* Espace entre le menu principal et le sous-menu */
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 60px;
+      margin: 0;
+      padding: 0;
+      justify-content: center;
+    }
+
+    /* Réduire un peu l'espace entre les boutons du sous-menu */
+    .sub-banner nav ul {
+      gap: 30px;
+    }
+
+    /* Le style s'applique aux deux menus (principal et sous-menu) */
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      padding: 14px 24px;
+      border-radius: 6px;
+      font-size: 1.1rem;
+      text-align: center;
+      display: inline-block;
+      transition: background 0.3s, color 0.3s;
+    }
+
+    nav ul li a:hover,
+    nav ul li a.active {
+      background-color: white;
+      color: black;
+    }
+
+    .projects {
+      margin-top: 80px;
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .project-card {
+      background: #121212;
+      color: white;
+      text-decoration: none;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(255,255,255,0.1);
+      transition: transform 0.3s, box-shadow 0.3s;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .project-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 16px rgba(255,255,255,0.2);
+    }
+
+    .project-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .card-content {
+      padding: 20px;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .card-content h3 {
+      margin: 0 0 10px;
+      font-size: 1.2em;
+    }
+
+    .card-content p {
+      font-size: 0.95em;
+      margin: 0 0 20px;
+    }
+
+    .read-more {
+      margin-top: auto;
+      font-weight: bold;
+      color: white;
+      font-size: 1em;
+      padding: 5px 10px;
+      border: 2px solid white;
+      border-radius: 8px;
+      background-color: transparent;
+      transition: all 0.3s ease;
+      display: inline-block;
+    }
+
+    .read-more:hover {
+      background-color: white;
+      color: black;
+      transform: scale(1.1);
+    }
+
+    /* Responsive */
+    @media screen and (max-width: 768px) {
+      .top-banner, .sub-banner {
+        flex-direction: column;
+        padding: 15px;
+      }
+
+      nav ul, .sub-banner nav ul {
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      .logo {
+        height: 150px;
+      }
+    }
+
+    @media screen and (max-width: 480px) {
+      .logo {
+        height: 120px;
+      }
+
+      .read-more {
+        font-size: 0.9em;
+        padding: 4px 8px;
+      }
+
+      .card-content h3 {
+        font-size: 1em;
+      }
+
+      .card-content p {
+        font-size: 0.85em;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="header-container">
+    <div class="logo-container">
+      <a href="accueil.html"><img src="logo.png" alt="Logo" class="logo"></a>
+    </div>
+    
+    <!-- Menu principal -->
+    <header class="top-banner">
+      <nav>
+        <ul>
+          <li><a href="apdm.html">À propos de moi</a></li>
+          <li><a href="Projet.html" class="active">Projets</a></li>
+          <li><a href="bilan.html">Bilan</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- Sous-menu BUT (BUT 2 est maintenant actif) -->
+    <div class="sub-banner">
+      <nav>
+        <ul>
+          <li><a href="projet.html">BUT 1</a></li>
+          <li><a href="but2.html" class="active">BUT 2</a></li>
+          <li><a href="but3.html">BUT 3</a></li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+
+  <section class="hero"></section>
+
+  <section class="projects">
+    <div class="projects-grid">
+      <!-- PLACEHOLDERS: À remplacer par tes projets de BUT 2 -->
+      <a href="projet_but2_1.html" class="project-card">
+        <img src="projet_placeholder.png" alt="Projet BUT 2 - 1">
+        <div class="card-content">
+          <h3>Titre du Projet BUT 2 (1)</h3>
+          <p>Description courte de ton premier projet de deuxième année. Remplace ce texte et l'image par tes propres contenus.</p>
+          <span class="read-more">Lire la suite</span>
+        </div>
+      </a>
+      
+      <a href="projet_but2_2.html" class="project-card">
+        <img src="projet_placeholder.png" alt="Projet BUT 2 - 2">
+        <div class="card-content">
+          <h3>Titre du Projet BUT 2 (2)</h3>
+          <p>Description courte de ton deuxième projet de deuxième année. Remplace ce texte et l'image par tes propres contenus.</p>
+          <span class="read-more">Lire la suite</span>
+        </div>
+      </a>
+      
+      <!-- Ajoute d'autres cartes ici selon le nombre de projets que tu as pour le BUT 2 -->
+      
+    </div>
+  </section>
+</body>
+</html>

@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bilan</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Roboto Condensed', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #121212;
+      color: white;
+      text-transform: uppercase;
+      overflow-x: hidden;
+    }
+
+    .hero {
+      position: relative;
+      height: 50vh;
+      width: 100%;
+      background: url('background.png') center/cover no-repeat;
+      filter: blur(5px);
+      z-index: -1;
+    }
+
+    .header-container {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      z-index: 10;
+      padding-top: 20px;
+    }
+
+    .logo-container {
+      margin-bottom: 20px;
+    }
+
+    .logo {
+      height: 200px;
+      width: auto;
+      filter: drop-shadow(0 0 10px white);
+    }
+
+    /* Style du menu principal */
+    .top-banner {
+      display: flex;
+      justify-content: center;
+      background: rgba(0, 0, 0, 0.9);
+      padding: 20px 40px;
+      border-radius: 10px;
+      width: 90%;
+      max-width: 900px;
+    }
+
+    /* Style du sous-menu (BUT 1, BUT 2, BUT 3) */
+    .sub-banner {
+      display: flex;
+      justify-content: center;
+      background: rgba(0, 0, 0, 0.9);
+      padding: 15px 40px;
+      border-radius: 10px;
+      width: 90%;
+      max-width: 600px;
+      margin-top: 15px;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 60px;
+      margin: 0;
+      padding: 0;
+      justify-content: center;
+    }
+
+    /* Réduction de l'espace pour le sous-menu */
+    .sub-banner nav ul {
+      gap: 30px;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      padding: 14px 24px;
+      border-radius: 6px;
+      font-size: 1.1rem;
+      text-align: center;
+      display: inline-block;
+      transition: background 0.3s, color 0.3s;
+    }
+
+    nav ul li a:hover,
+    nav ul li a.active {
+      background-color: white;
+      color: black;
+    }
+
+    .content {
+      max-width: 1000px;
+      margin: 200px auto 40px; /* J'ai augmenté un peu la marge haute pour que le texte ne chevauche pas les deux menus */
+      padding: 20px;
+      text-align: justify;
+      text-transform: none;
+    }
+
+    h2 {
+      text-align: center;
+      text-transform: uppercase;
+      margin-top: 40px;
+    }
+
+    p {
+      line-height: 1.6em;
+    }
+
+    /* Responsive */
+    @media screen and (max-width: 768px) {
+      .top-banner, .sub-banner {
+        flex-direction: column;
+        padding: 15px;
+      }
+
+      nav ul, .sub-banner nav ul {
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      .logo {
+        height: 150px;
+      }
+
+      .content {
+        padding: 15px;
+        margin-top: 250px; /* Ajustement responsive pour la marge haute */
+      }
+    }
+
+    @media screen and (max-width: 480px) {
+      .logo {
+        height: 120px;
+      }
+
+      nav ul li a {
+        padding: 10px 18px;
+        font-size: 1em;
+      }
+      
+      .content {
+        margin-top: 300px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="hero"></div>
+
+  <div class="header-container">
+    <div class="logo-container">
+      <a href="accueil.html"><img src="logo.png" alt="Logo" class="logo"></a>
+    </div>
+    
+    <!-- Menu principal -->
+    <div class="top-banner">
+      <nav>
+        <ul>
+          <li><a href="apdm.html">À propos de moi</a></li>
+          <li><a href="Projet.html">Projets</a></li>
+          <li><a href="bilan.html" class="active">Bilan</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <!-- Sous-menu BUT -->
+    <div class="sub-banner">
+      <nav>
+        <ul>
+          <li><a href="bilan.html" class="active">BUT 1</a></li>
+          <li><a href="bilan2.html">BUT 2</a></li>
+          <li><a href="bilan3.html">BUT 3</a></li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+
+  <div class="content">
+    <h2>Retour d’expérience – Ma première année en BUT Science des Données</h2>
+    <p>Inscrit en première année de BUT Sciences des Données à Niort, j’ai pris le temps de revenir sur cette première étape universitaire. Cette année m’a permis de découvrir un nouvel environnement académique, d’adopter des méthodes de travail différentes de celles du lycée, et de mieux me connaître à travers les apprentissages, les réussites mais aussi les obstacles rencontrés.</p>
+
+    <h2>Une année de découvertes et d’apprentissage</h2>
+    <p>En début d’année, je n’avais encore jamais réellement pratiqué l’informatique, et mes bases en statistiques étaient limitées. Très rapidement, j’ai été confronté à un univers technique, avec des outils, des langages et des méthodes qui m’étaient totalement nouveaux. Ce fut une phase exigeante, mais extrêmement formatrice.</p>
+    <p>J’ai également été agréablement surpris par la diversité des matières proposées. En plus des enseignements scientifiques, des modules de communication, d’anglais technique et surtout des projets à présenter à l’oral nous ont été proposés. Ces projets m’ont aidé à progresser à l’oral, à prendre confiance en moi et à renforcer mes capacités à travailler en équipe.</p>
+
+    <h2>Une progression personnelle marquante</h2>
+    <p>Sur le plan personnel, cette année a été l’occasion de changer mes habitudes de travail. Les débuts ont été un peu laborieux, mais j’ai progressivement compris que la réussite dans le supérieur nécessite rigueur, autonomie et régularité. Ce déclic, même s’il est arrivé tardivement, m’a permis de retrouver une dynamique de travail plus efficace.</p>
+    <p>J’ai parfois traversé des phases de doute et de frustration, notamment face à certaines notions complexes en programmation ou lorsque plusieurs projets étaient à rendre en même temps. Malgré tout, j’ai su rester organisé et rendre mes travaux dans les délais, ce qui m’a permis de rester sur une trajectoire positive.</p>
+    <p>L’un des progrès les plus marquants pour moi a été ma prise en main des outils informatiques. En début d’année, je n’y connaissais pratiquement rien, et aujourd’hui, je me sens bien plus à l’aise avec différents langages, grâce à une pratique régulière tout au long de l’année.</p>
+
+    <h2>Forces et limites de la formation selon mon expérience</h2>
+    <p>Initialement, c’est l’aspect statistique de la formation qui m’attirait le plus. À l’inverse, j’appréhendais beaucoup l’informatique, que je considérais comme peu intuitive et difficile d’accès. Ces impressions se sont confirmées en début d’année : l’informatique représentait pour moi un véritable défi.</p>
+    <p>Cependant, à mesure que j’ai avancé dans l’année, j’ai découvert des outils plus accessibles et une approche plus concrète, ce qui a changé ma perception. En travaillant régulièrement, j’ai même fini par prendre goût à certains aspects de la programmation.</p>
+    <p>Concernant les mathématiques, j’ai peut-être sous-estimé leur niveau de complexité, pensant à tort qu’elles seraient plus simples que celles du lycée. Cette erreur d’évaluation m’a conduit à certaines difficultés. À l’inverse, j’ai longtemps pensé que je ne serais pas capable de progresser en informatique, alors que c’est finalement dans ce domaine que j’ai le plus évolué. Aujourd’hui, je me sens même plus compétent en informatique qu’en mathématiques, ce qui était impensable pour moi en début d’année.</p>
+  </div>
+
+</body>
+</html>
