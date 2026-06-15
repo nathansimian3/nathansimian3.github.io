@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projet BUT 2 : LEAV Optimisation de flotte</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap" rel="stylesheet">
+  <style>
+    /* ... (GARDER LE MÊME CSS QUE CI-DESSUS) ... */
+    body { font-family: 'Roboto Condensed', sans-serif; margin: 0; padding: 0; background-color: #121212; color: white; text-transform: uppercase; overflow-x: hidden; }
+    .hero { position: relative; height: 50vh; width: 100%; background: url('background.png') center/cover no-repeat; filter: blur(5px); z-index: -1; }
+    .header-container { position: absolute; top: 0; left: 0; width: 100%; display: flex; flex-direction: column; align-items: center; z-index: 10; padding-top: 20px; }
+    .logo-container { margin-bottom: 20px; }
+    .logo { height: 200px; width: auto; filter: drop-shadow(0 0 10px white); }
+    .top-banner { display: flex; justify-content: center; background: rgba(0, 0, 0, 0.9); padding: 20px 40px; border-radius: 10px; width: 90%; max-width: 900px; }
+    nav ul { list-style: none; display: flex; flex-wrap: wrap; gap: 60px; margin: 0; padding: 0; justify-content: center; }
+    nav ul li a { color: white; text-decoration: none; font-weight: bold; padding: 14px 24px; border-radius: 6px; font-size: 1.1rem; transition: background 0.3s; }
+    nav ul li a:hover, nav ul li a.active { background-color: white; color: black; }
+    .project-content { max-width: 800px; margin: 60px auto 40px; text-align: center; padding: 20px; }
+    .project-content h1 { font-size: 2.5em; margin-bottom: 30px; text-transform: none; }
+    .project-content h2 { font-size: 1.5em; margin-top: 40px; margin-bottom: 15px; color: #f2f2f2; text-transform: none; text-align: left; }
+    .project-content img { width: 100%; max-height: 400px; object-fit: cover; border-radius: 15px; margin-bottom: 30px; }
+    .project-content p { font-size: 1.2em; line-height: 1.6em; text-transform: none; text-align: justify; }
+    @media screen and (max-width: 768px) { .top-banner { flex-direction: column; padding: 15px; } nav ul { flex-direction: column; gap: 20px; } .logo { height: 150px; } .project-content { padding: 15px; } }
+    @media screen and (max-width: 480px) { .logo { height: 120px; } nav ul li a { padding: 10px 18px; font-size: 1em; } }
+  </style>
+</head>
+<body>
+  <div class="hero"></div>
+  <div class="header-container">
+    <div class="logo-container"><a href="accueil.html"><img src="logo.png" alt="Logo" class="logo"></a></div>
+    <div class="top-banner">
+      <nav>
+        <ul>
+          <li><a href="apdm.html">À propos de moi</a></li>
+          <li><a href="Projet.html" class="active">Projets</a></li>
+          <li><a href="bilan.html">Bilan</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+
+  <section class="project-content">
+    <h1>SAÉ LEAV - Optimisation et Gestion de Flotte</h1>
+    <img src="projet_placeholder.png" alt="Illustration du projet LEAV">
+    
+    <h2>Contexte du projet</h2>
+    <p>Ce projet s'inscrivait dans un contexte réel pour le Laboratoire de l'Environnement et de l'Alimentation de la Vendée (LEAV), un établissement public regroupant 130 agents. Notre mission était de développer un module informatique complet destiné à optimiser l'affectation des véhicules de service pour les techniciens effectuant les tournées de prélèvements sur tout le département.</p>
+
+    <h2>Les Défis (Logistique & Algorithmique)</h2>
+    <p>La complexité de ce projet résidait dans l'algorithmique. Le script devait ingérer des fichiers CSV (liste des préleveurs, disponibilité des véhicules, correspondances des interventions) pour générer des plannings d'affectation sur une période de 3 mois. Il fallait impérativement intégrer de lourdes contraintes métiers : la gestion des véhicules de réserve, les périodes de réparation, et le covoiturage (plusieurs préleveurs dans un même véhicule). L'objectif ultime étant de diminuer la rotation matérielle pour qu'un agent conserve, si possible, le même véhicule toute l'année.</p>
+
+    <h2>Outils & Développement</h2>
+    <p>Le moteur d'optimisation a été codé sous forme d'une API en Python. Par-dessus, nous avons conçu une Interface Humain-Machine (IHM) visuelle et fluide. L'enjeu était de permettre à l'administration de modifier facilement les associations générées tout en effectuant un contrôle de cohérence en direct. Une contrainte majeure de l'équipe informatique du LEAV a été respectée : l'application devait fonctionner instantanément, sans aucune installation logicielle sur les postes clients.</p>
+
+    <h2>Livrables & Restitution</h2>
+    <p>Nous avons livré un code source intégralement commenté, un manuel technique dédié à l'équipe de maintenance informatique, et un manuel utilisateur. L'évaluation s'est déroulée sous forme de "pitch" où nous devions convaincre le "client" d'acheter notre solution, en justifiant chacun de nos choix en matière d'ergonomie, de bibliothèques utilisées et de sécurité des données.</p>
+  </section>
+</body>
+</html>
